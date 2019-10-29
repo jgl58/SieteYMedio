@@ -13,6 +13,11 @@
 		C709441C2368957A00F964BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C709441B2368957A00F964BD /* Assets.xcassets */; };
 		C709441F2368957A00F964BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709441D2368957A00F964BD /* LaunchScreen.storyboard */; };
 		C709442A2368957A00F964BD /* SieteYMedioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70944292368957A00F964BD /* SieteYMedioTests.swift */; };
+		C7094437236895B400F964BD /* Palo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7094434236895B400F964BD /* Palo.swift */; };
+		C7094438236895B400F964BD /* Carta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7094435236895B400F964BD /* Carta.swift */; };
+		C7094439236895B400F964BD /* Mano.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7094436236895B400F964BD /* Mano.swift */; };
+		C709443B2368960200F964BD /* Baraja.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709443A2368960200F964BD /* Baraja.swift */; };
+		C709443D236898FF00F964BD /* Juego.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709443C236898FF00F964BD /* Juego.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		C70944252368957A00F964BD /* SieteYMedioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SieteYMedioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70944292368957A00F964BD /* SieteYMedioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SieteYMedioTests.swift; sourceTree = "<group>"; };
 		C709442B2368957A00F964BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7094434236895B400F964BD /* Palo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Palo.swift; path = ../../../CartasSwift/Palo.swift; sourceTree = "<group>"; };
+		C7094435236895B400F964BD /* Carta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Carta.swift; path = ../../../CartasSwift/Carta.swift; sourceTree = "<group>"; };
+		C7094436236895B400F964BD /* Mano.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mano.swift; path = ../../../CartasSwift/Mano.swift; sourceTree = "<group>"; };
+		C709443A2368960200F964BD /* Baraja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baraja.swift; sourceTree = "<group>"; };
+		C709443C236898FF00F964BD /* Juego.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juego.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,11 @@
 		C70944132368957900F964BD /* SieteYMedio */ = {
 			isa = PBXGroup;
 			children = (
+				C709443A2368960200F964BD /* Baraja.swift */,
+				C7094435236895B400F964BD /* Carta.swift */,
+				C7094436236895B400F964BD /* Mano.swift */,
+				C7094434236895B400F964BD /* Palo.swift */,
+				C709443C236898FF00F964BD /* Juego.swift */,
 				C70944142368957900F964BD /* AppDelegate.swift */,
 				C70944162368957900F964BD /* ViewController.swift */,
 				C70944182368957900F964BD /* Main.storyboard */,
@@ -198,7 +213,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70944172368957900F964BD /* ViewController.swift in Sources */,
+				C7094438236895B400F964BD /* Carta.swift in Sources */,
+				C709443B2368960200F964BD /* Baraja.swift in Sources */,
 				C70944152368957900F964BD /* AppDelegate.swift in Sources */,
+				C7094437236895B400F964BD /* Palo.swift in Sources */,
+				C709443D236898FF00F964BD /* Juego.swift in Sources */,
+				C7094439236895B400F964BD /* Mano.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,10 +19,45 @@ class SieteYMedioTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testCartaCorrecta() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let carta : Carta = Carta(2,Palo.bastos)!
+        
+        XCTAssert(carta.valor == 2)
+        XCTAssert(carta.palo == Palo.bastos)
+        
     }
+    
+    func testCartaIncorrecta() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let carta : Carta? = Carta(-2,Palo.bastos)
+        XCTAssert(carta == nil)
+        
+    }
+    
+    func testRespartirCarta() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let baraja : Baraja = Baraja()
+        let tam = baraja.cartas.count
+        let carta : Carta = baraja.repartirCarta()
+        let presente = baraja.cartas.contains() {
+                elemento in
+                if elemento.valor == carta.valor && elemento.palo == carta.palo {
+                    return true
+                }
+                else {
+                    return false
+                }
+        }
+    
+        XCTAssert(baraja.cartas.count == tam-1)
+        XCTAssertFalse(presente)
+        
+    }
+    
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
