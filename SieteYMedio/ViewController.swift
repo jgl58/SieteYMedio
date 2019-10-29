@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     @IBAction func plantarse(_ sender: Any) {
         var titulo : String = "Has ganado"
-        let res = juego.resultadoMaquina()
+        let res = juego.jugarMaquina()
         if juego.sumaMaquina >= juego.sumaJugador {
             titulo = "Has perdido"
         }
@@ -67,7 +67,6 @@ class ViewController: UIViewController {
             let action = UIAlertAction(
                 title: "OK",
                 style: UIAlertAction.Style.default)
-            print(cartaPedida.descripcion() + " Tu suma es de \(juego.sumaJugador)")
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
             
@@ -75,6 +74,8 @@ class ViewController: UIViewController {
             btnPlantarse.isEnabled = false
             //limpiarCartas()
             print("Te has pasado. \(cartaPedida.descripcion()) Tu suma es de \(juego.sumaJugador)")
+        }else{
+            print(cartaPedida.descripcion() + " Tu suma es de \(juego.sumaJugador)")
         }
         contador+=1
     }

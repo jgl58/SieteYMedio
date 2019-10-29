@@ -13,11 +13,13 @@ class Juego {
     var sumaJugador : Float
     var sumaMaquina : Float
     var seguirJugando : Bool
+    var seguirJugandoMaquina : Bool
     
     init() {
         baraja = Baraja()
         sumaJugador = 0
         seguirJugando = true
+        seguirJugandoMaquina = true
         sumaMaquina = 0
     }
     
@@ -37,11 +39,41 @@ class Juego {
         comprobarSuma()
     }
     
+    func sumarCartaMaquina(_ carta: Carta){
+        if(carta.valor >= 10){
+            self.sumaMaquina += 0.5
+        }else{
+            self.sumaMaquina += Float(carta.valor)
+        }
+        
+        comprobarSuma()
+    }
     
     func comprobarSuma(){
         if(sumaJugador > 7.5){
             self.seguirJugando = false
         }
+    }
+    func comprobarSumaMaquina(){
+        if(sumaMaquina > 7.5){
+            print("La maquina se ha pasado")
+            self.seguirJugandoMaquina = false
+        }
+    }
+    
+    func jugarMaquina() -> Float{
+        var decision = true
+        while decision || seguirJugandoMaquina{
+            let c = baraja.repartirCarta()
+            sumarCartaMaquina(c)
+            let decisionSeguir : [Bool] = [false,true,true,true]
+            decision = decisionSeguir.randomElement()!
+            if !decision {
+                seguirJugandoMaquina = false
+                print("La maquina se ha plantado")
+            }
+        }
+        return resultadoMaquina()
     }
     
     func resultadoMaquina() -> Float{
