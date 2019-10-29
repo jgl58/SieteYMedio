@@ -46,7 +46,8 @@ class Juego {
             self.sumaMaquina += Float(carta.valor)
         }
         
-        comprobarSuma()
+        comprobarSumaMaquina()
+        
     }
     
     func comprobarSuma(){
@@ -63,24 +64,26 @@ class Juego {
     
     func jugarMaquina() -> Float{
         var decision = true
+        print("Cartas de la maquina")
         while decision || seguirJugandoMaquina{
             let c = baraja.repartirCarta()
+            print(c.descripcion())
             sumarCartaMaquina(c)
-            let decisionSeguir : [Bool] = [false,true,true,true]
+            if seguirJugandoMaquina == false {
+                break
+            }
+            if sumaMaquina == 7.5 {
+                print("La maquina tiene 7.5")
+                seguirJugandoMaquina == false
+                break
+            }
+            let decisionSeguir : [Bool] = [false,true,true,true,true]
             decision = decisionSeguir.randomElement()!
             if !decision {
                 seguirJugandoMaquina = false
                 print("La maquina se ha plantado")
             }
         }
-        return resultadoMaquina()
-    }
-    
-    func resultadoMaquina() -> Float{
-        let parteEntera = Int.random(in: 1..<7)
-        let parteDecimal : [Float] = [0.0,0.5]
-        self.sumaMaquina = Float(parteEntera)+parteDecimal.randomElement()!
-        return self.sumaMaquina
-    }
-    
+        return sumaMaquina
+        
 }

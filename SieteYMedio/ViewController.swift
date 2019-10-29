@@ -36,10 +36,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plantarse(_ sender: Any) {
-        var titulo : String = "Has ganado"
+        var titulo : String = "Has perdido"
         let res = juego.jugarMaquina()
-        if juego.sumaMaquina >= juego.sumaJugador {
-            titulo = "Has perdido"
+        if (juego.sumaJugador >= juego.sumaMaquina && juego.sumaJugador <= 7.5 && juego.sumaMaquina <= 7.5)
+            || (juego.sumaJugador <= 7.5 && juego.sumaMaquina > 7.5)
+        {
+            titulo = "Has ganado"
         }
         let alert = UIAlertController(
             title: titulo,
